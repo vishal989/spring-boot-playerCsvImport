@@ -1,0 +1,19 @@
+environment:
+  MYSQL_ROOT_PASSWORD: root
+  MYSQL_DATABASE: player
+  MYSQL_USER: myuser
+  MYSQL_PASSWORD: mypass
+
+--Run this in cmd--
+
+docker exec -it mysql-db mysql -uroot -proot player
+
+SHOW DATABASES;
+USE player;
+SHOW TABLES;
+SELECT * FROM user;
+
+
+ddl-auto: update → When you start your app, Hibernate will create or update tables/columns in MySQL to match your entity classes, without deleting existing data.
+
+Useful during development, because you don’t need to manually create tables.
