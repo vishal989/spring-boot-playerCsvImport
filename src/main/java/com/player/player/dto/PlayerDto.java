@@ -1,14 +1,19 @@
 package com.player.player.dto;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.Data;
+
+import java.time.LocalDate;
 
 @Data
 public class PlayerDto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
+    private String playerID;
+    private String nameFirst;
+    private String nameLast;
+    private Integer weight; // in pounds
+    private Integer height; // in inches
+    private String bats;
+    private String throws_;
+    private String debut;
+    private String finalGame;
+    private LocalDate dateOfBirth;
 }

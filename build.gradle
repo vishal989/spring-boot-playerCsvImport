@@ -36,6 +36,11 @@ dependencies {
 
 	// For CSV parsing
 	implementation 'org.apache.commons:commons-csv:1.10.0' // for CSV import
+
+	implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.5'
 }
 
 tasks.named('test') {

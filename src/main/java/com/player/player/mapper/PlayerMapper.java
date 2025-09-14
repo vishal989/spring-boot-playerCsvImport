@@ -3,6 +3,8 @@ package com.player.player.mapper;
 import com.player.player.model.Player;
 import org.apache.commons.csv.CSVRecord;
 
+import java.time.LocalDate;
+
 public class PlayerMapper {
 
     public static Player fromCsvRecord(CSVRecord record) {
@@ -10,9 +12,17 @@ public class PlayerMapper {
 
         player.setPlayerID(record.get("playerID"));
 
-        player.setBirthYear(parseInt(record.get("birthYear")));
-        player.setBirthMonth(parseInt(record.get("birthMonth")));
-        player.setBirthDay(parseInt(record.get("birthDay")));
+        String year = record.get("birthYear");
+        String month = record.get("birthMonth");
+        String day = record.get("birthDay");
+
+        if (!year.isEmpty() && !month.isEmpty() && !day.isEmpty()) {
+            player.setDateOfBirth(LocalDate.of(
+                    Integer.parseInt(year),
+                    Integer.parseInt(month),
+                    Integer.parseInt(day)
+            ));
+        }
 
         player.setBirthCountry(record.get("birthCountry"));
         player.setBirthState(record.get("birthState"));

@@ -4,15 +4,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.time.LocalDate;
+
 @Entity
 @Data
 public class Player {
     @Id
     private String playerID;   // primary key
 
-    private Integer birthYear;
-    private Integer birthMonth;
-    private Integer birthDay;
+    private LocalDate dateOfBirth;
 
     private String birthCountry;
     private String birthState;
